@@ -1,0 +1,110 @@
+
+// BlogM start
+
+.BlogM{
+    position: relative;
+    margin-bottom: 100px;
+
+    &__pagination__page{
+        display: flex;
+        align-items:center;
+        grid-gap: 20px;
+        justify-content: center;
+    }
+
+    &__pagination__page__mrx{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        grid-gap: 5px;
+    }
+
+    &__pagination__link__left{
+        @include fontAll(18px,700,$text);
+        line-height: 100%;
+        text-transform: uppercase;
+        @extend%transition;
+
+        &:hover{
+            color:$oring;
+        }
+    }
+
+    &__pagination__link{
+        @include fontAll(18px,700,$title);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        text-transform: uppercase;
+        @extend%transition;
+
+        &:hover{
+            color:$link;
+            background-color:$oring;
+        }
+    }
+
+    &__pagination{
+        margin-top: 50px;
+    }
+}
+
+
+.blog_in{
+    position: relative;
+    margin-bottom: 100px;
+
+    &__img{
+        @include fiximg(100%,540px,true);
+    }
+
+    &__text{
+        @include fontAll(16px,400,$text);
+        line-height: 30px;
+        text-align: justify;
+        margin-top: 50px;
+        h1,h2,h3,h4,h5,h6,b{
+             @include fontAll(22px,700,$title);
+             line-height: 130%;
+        }
+
+        img{
+            @include fiximg(100%,540px,true);
+            margin: 30px 0;
+        }
+    }
+}
+
+
+.BlogM__active .BlogM__pagination__link{
+    background-color:$oring;
+    color:$link;
+}
+
+// BlogM end
+
+
+@media (max-width:1000px){
+    .blog_in__img{
+        height: auto;
+        max-height: 500px;
+    }
+
+    .blog_in__text{
+        margin-top: 20px;
+    }
+
+    .blog_in__text img{
+        height: auto;
+        max-height: 500px;
+    }
+}
+
+
+@media (max-width:400px){
+    .blog_in__text{
+        font-size: 14px;
+    }
+}

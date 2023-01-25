@@ -1,0 +1,220 @@
+
+// about_company start
+
+.about_company{
+    position: relative;
+    z-index: 0;
+    margin-bottom: 100px;
+    height: 332px;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    &::after{
+        content:"";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0, 0, 0, 33%);
+    }
+
+    &__list{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 140px;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__title__h2{
+        @include fontAll(40px,400,$link);
+        line-height: 100%;
+        
+        max-height: 110px;
+        -webkit-line-clamp: 2;
+        line-height: 1.4;
+        position: relative;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    &__menu{
+        display: flex;
+        align-items:center;
+        margin-top: 20px;
+        li+li{
+            border-left: 1px solid $link;
+            margin-left: 15px;
+            padding-left: 15px;
+        }
+    }
+
+    &__menu_link{
+        @include fontAll(18px,400,$link);
+        line-height: 100%;
+
+        max-height: 50px;
+        -webkit-line-clamp: 2;
+        line-height: 1.4;
+        position: relative;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    &__cart{
+        position: relative;
+        margin-bottom: 100px;
+
+        .products__title__h2{
+            text-align: start;
+            margin-bottom: 40px;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .about__link__button{
+            display: flex;
+            align-items:center;
+            justify-content: center;
+        }
+    }
+
+    &__text{
+        @include fontAll(16px,400,$text);
+        text-align: justify;
+        line-height: 30px;
+        h1,h2,h3,h4,h5,h6,b{
+            @include fontAll(22px,700,$title);
+            line-height: 130%;
+       }
+
+       img{
+           @include fiximg(100%,540px,true);
+           margin: 30px 0;
+       }
+    }
+
+    &__img{
+        @include fiximg(100%,540px,true);
+        margin: 50px 0;
+    }
+
+    &__video__item{
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin: 50px 0;
+    }
+
+    &__video{
+        position: relative;
+        img{
+            width: 100%;
+            height: 640px;
+            object-fit: cover;
+        }
+    }
+
+    &__services{
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        grid-gap: 50px;
+        margin: 50px 0;
+    }
+
+    &__services__img{
+       flex: 0 0 47%;
+       @include fiximg(100%,440px,true);
+    }
+}
+
+// about_company end
+
+@media (max-width:1000px){
+    .about_company__services__img {
+        flex: 0 0 100%;
+        max-height: 500px;
+    }
+}
+
+@media (max-width:950px){
+    .about_company__video__item,
+    .about_company__img,
+    .about_company__text img{
+        margin: 30px 0;
+    }
+
+    .about_company__cart .products__title__h2{
+        margin-bottom: 30px;
+    }
+
+    .about_company__img,
+    .about_company__video img,
+    .about_company__text img{
+        height: auto;
+        max-height: 500px;
+    }
+
+    .about_company__title__h2 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width:750px){
+    .about_company__title__h2 {
+        font-size: 36px;
+    }
+
+    .about_company__services__img {
+        height: auto;
+    }
+}
+
+@media (max-width:600px){
+    .about_company__title__h2 {
+        font-size: 34px;
+    }
+
+    .about_company {
+        height: 300px;
+    }
+
+    .about_company__list {
+        padding-top: 120px;
+    }
+
+    .about_company__menu_link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:500px){
+    .about_company__title__h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width:400px){
+    .about_company__title__h2 {
+        font-size: 30px;
+    }
+
+    .about_company__menu_link,
+    .about_company__text{
+        font-size: 14px;
+    }
+}

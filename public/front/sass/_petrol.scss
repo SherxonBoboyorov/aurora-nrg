@@ -1,0 +1,141 @@
+
+// petrol start
+
+.petrol{
+    position: relative;
+    margin-bottom: 100px;
+
+    &__list{
+        display: flex;
+        align-items:flex-start;
+        justify-content: center;
+        grid-gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__item{
+        display: flex;
+        align-items:center;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: 100%;
+        flex: 0 0 22%;
+        min-height: 220px;
+        max-height: 250px;
+        background: $link;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    &__title__h4{
+        width: 50px;
+        height: 50px;
+        border-radius:50px;
+        -webkit-border-radius:50px;
+        -moz-border-radius:50px;
+        -ms-border-radius:50px;
+        -o-border-radius:50px;
+        background-color:$oring;
+        text-align: center;
+        @include fontAll(18px,700,$link);
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        line-height: 100%;
+        text-transform: uppercase;
+    }
+
+    &__title__h2{
+        @include fontAll(24px,900,$title);
+        line-height: 100%;
+        margin: 30px 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__link{
+        width: 100%;
+        height: 40px;
+        background-color:$oring;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        @extend%transition;
+        &:hover{
+            background-color:#fd7757;
+        }
+    }
+
+    &__item__foto{
+        display: flex;
+        margin-top: 15px;
+        align-items:center;
+        justify-content: center;
+        background-color:$oring;
+        width: 120px;
+        height: 120px;
+        border-radius:50%;
+        -webkit-border-radius:50%;
+        -moz-border-radius:50%;
+        -ms-border-radius:50%;
+        -o-border-radius:50%;
+
+        img{
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            object-position: center center;
+        }
+    }
+}
+
+// petrol end
+
+
+@media (max-width:1020px){
+    .petrol__item {
+        flex: 0 0 30%;
+    }
+
+    .petrol__title__h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width:800px){
+    .petrol__item {
+        flex: 0 0 47%;
+    }
+
+    .petrol__title__h2 {
+        font-size: 20px;
+    }
+
+    .petrol__title__h4{
+        font-size: 16px;
+    }
+
+    .petrol__list{
+        grid-gap: 25px;
+    }
+
+    .petrol__item__foto{
+        width: 100px;
+        height: 100px;
+    }
+
+    .petrol__item__foto img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+@media (max-width:500px){
+    .petrol__item {
+        flex: 0 0 100%;
+    }
+
+    .petrol__list{
+        grid-gap: 30px;
+    }
+}
